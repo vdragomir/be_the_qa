@@ -1,0 +1,12 @@
+{
+  "name": "be_the_qa",
+  "version": "1.0.0",
+  "scripts": {
+    "cypress": "./node_modules/.bin/cypress",
+    "cypress:open": "cypress open",
+    "run:tests": "cypress run --headless --env configFile=config"
+  },
+  "devDependencies": {
+    "cypress": "^6.0.0"
+  }
+}

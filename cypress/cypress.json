@@ -1,0 +1,9 @@
+{
+  "projectId": "",
+  "integrationFolder": "tests",
+  "fixturesFolder": "core/fixtures",
+  "pluginsFile": "core/plugins/index.js",
+  "supportFile": "core/support/index.js",
+  "videosFolder": "screenshots/videos",
+  "screenshotsFolder": "screenshots"
+}
