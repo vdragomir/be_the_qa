@@ -11,7 +11,7 @@ This repository will be used for API testing in the Be the QA workshop.
 
 # Installation steps
 - Open the terminal and navigate to the location you want to clone the project
-- Run the `git@github.com:vdragomir/be_the_qa.git` command
+- Run the `git clone git@github.com:vdragomir/be_the_qa.git` command
 - After the download has completed, run `cd be_the_qa/cypress`
 - In the `cypress` directory, run the `npm install` or `yarn install` command in order to install the required dependencies
 
