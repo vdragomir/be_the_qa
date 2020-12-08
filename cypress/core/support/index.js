@@ -20,4 +20,7 @@ import './commands'
 // require('./commands')
 
 import chaiJsonSchema from 'chai-json-schema';
+import chaiExclude from 'chai-exclude';
+
+chai.use(chaiExclude);
 chai.use(chaiJsonSchema);

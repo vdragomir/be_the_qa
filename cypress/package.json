@@ -7,6 +7,7 @@
     "run:tests": "cypress run --headless --env configFile=config"
   },
   "devDependencies": {
+    "chai-exclude": "^2.0.2",
     "cypress": "^6.0.0"
   },
   "dependencies": {
