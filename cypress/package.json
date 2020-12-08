@@ -8,5 +8,8 @@
   },
   "devDependencies": {
     "cypress": "^6.0.0"
+  },
+  "dependencies": {
+    "chai-json-schema": "^1.5.1"
   }
 }

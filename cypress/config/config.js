@@ -1,8 +1,8 @@
 module.exports = {
     defaultCommandTimeout: 10000,
     pageLoadTimeout: 25000,
-    baseUrl: "https://reqres.in/",
+    baseUrl: "https://be-the-qa-api.herokuapp.com/",
     env: {
-        BASE_API_URL: "https://reqres.in/api/"
+        BASE_API_URL: "https://be-the-qa-api.herokuapp.com/"
     },
 };
