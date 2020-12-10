@@ -14,5 +14,13 @@ export function usersResponse(type) {
       return {
         ...userResponse, username: "Be the QA - 1 user"
       }
+    case "update-with-patch":
+      return {
+        ...userResponse, email: "betheqa@email.com - updated with patch"
+      }
+    case "update-with-put":
+      return {
+        ...userResponse, email: "betheqa@email.com - updated with put"
+      }
   }
 }

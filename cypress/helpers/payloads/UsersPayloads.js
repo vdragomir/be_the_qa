@@ -11,5 +11,13 @@ export function usersPayload (type) {
       return {
         ...createUserPayload, username: "Be the QA - 1 user"
       }
+    case "update-with-patch":
+      return {
+        ...createUserPayload, email: "betheqa@email.com - updated with patch"
+      }
+    case "update-with-put":
+      return {
+        ...createUserPayload, email: "betheqa@email.com - updated with put"
+      }
   }
 }

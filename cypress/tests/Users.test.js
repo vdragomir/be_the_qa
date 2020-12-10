@@ -3,7 +3,7 @@ import {usersPayload} from "../helpers/payloads/UsersPayloads";
 import {usersResponse} from "../helpers/responses/UsersResponses";
 import {usersSchema} from "../helpers/schemas/UsersSchema";
 
-describe("Get All Users", () => {
+describe.skip("Get All Users", () => {
   before(() => {
     cy.deleteUsers();
   });
@@ -37,7 +37,51 @@ describe("Get A User", () => {
   });
 });
 
-describe("Assertion types in Cypress", () => {
+describe("Update users with PATCH", () => {
+  let userId;
+
+  before(() => {
+    cy.deleteUsers();
+    cy.postRequest(usersRoute(), usersPayload("create-one")).then(response => {
+      userId = response.body.id;
+    });
+  });
+
+  it('should test that updating a user with PATCH works as expected',  () =>  {
+    cy.patchRequest(usersRoute() + userId, usersPayload("update-with-patch")).then(response => {
+      expect(response.body).excludingEvery(['id']).to.deep.equal(usersResponse("update-with-patch"));
+      expect(response.body).to.be.jsonSchema(usersSchema());
+      expect(response.status).to.be.equal(200);
+    });
+  });
+});
+
+describe.only("Update users with PUT", () => {
+  let userId;
+
+  before(() => {
+    cy.deleteUsers();
+    cy.postRequest(usersRoute(), usersPayload("create-one")).then(response => {
+      userId = response.body.id;
+    });
+  });
+
+  it('should test that updating a user with PUT works as expected',  () =>  {
+    cy.putRequest(usersRoute() + userId, usersPayload("update-with-put")).then(response => {
+      expect(response.body).excludingEvery(['id']).to.deep.equal(usersResponse("update-with-put"));
+      expect(response.body).to.be.jsonSchema(usersSchema());
+      expect(response.status).to.be.equal(200);
+    });
+  });
+});
+
+describe("Delete users", () => {
+  it('should test that deleting a user works',  () => {
+    
+  });
+});
+
+describe.skip("Assertion types in Cypress", () => {
   before(()=> {
     cy.deleteUsers();
     cy.postRequest(usersRoute(), usersPayload("create")).then(response => {});
